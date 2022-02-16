@@ -6,6 +6,7 @@
         public int Id { get; set; } 
         public SkillType skillType { get; set; }
         public Service service { get; set; }
+        public Faction faction { get; set; }
     }
 
     public enum SkillType
