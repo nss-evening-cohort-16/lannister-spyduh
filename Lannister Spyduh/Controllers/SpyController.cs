@@ -8,21 +8,30 @@ namespace Lannister_Spyduh.Controllers
     public class SpyController : ControllerBase
     {
         /* [HttpGet("skill/{skillType}")]
+
          [HttpGet("spies/{mySpy}/{skillType}")] ??????????????????????????????????????
          var mySpy = Spy
          mySpy.Skills
           mySpy.Services */
+       
+        // add
+
         /* [HttpGet("{spies/{friendlies}")]
          // Conditional for Friendly Spy Method.
          if (spy.Faction = user.Faction)
         {
             // This spy is an friendly!
          }; */
+
+
         /* [HttpGet("{spies/{enemies}")]
          // Conditional for Enemy Spy Method.
          if (spy.Faction != user.Faction && spy.Faction != 0){
          // This spy is an enemy!
          };*/
+
+
         // [HttpPost]
+
     }
 }
