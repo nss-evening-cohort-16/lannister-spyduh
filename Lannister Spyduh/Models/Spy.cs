@@ -1,12 +1,14 @@
-﻿namespace Lannister_Spyduh.Models
+﻿using System.Collections.Generic;
+
+namespace Lannister_Spyduh.Models
 {
     public class Spy
     {
         public string CodeName { get; set; }
         public int Id { get; set; } 
-        public SkillType skillType { get; set; }
-        public Service service { get; set; }
-        public Faction faction { get; set; }
+        public List<SkillType> Skills { get; set; }
+        public List<ServiceOffered> Services { get; set; }
+        public Faction Faction { get; set; }
     }
 
     public enum SkillType
@@ -20,7 +22,7 @@
         MartialArts
 
     }
-    public enum Service
+    public enum ServiceOffered
     {
         None,
         PrivateInvestigation,

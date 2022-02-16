@@ -10,45 +10,80 @@ namespace Lannister_Spyduh.DataAccess
             new Spy()
             {
                 CodeName = "GooseGoon Purcell",
-                faction = Faction.Blue,
+                Faction = Faction.Blue,
                 Id = 1,
-                skillType = SkillType.Espionage,
-                service = Service.Babysitting,
+                Skills = new List<SkillType>()
+                {
+                 SkillType.Espionage,
+                 SkillType.Demolitions,
+                },
+                Services = new List<ServiceOffered>()
+                {
+                ServiceOffered.Babysitting,
+                }
             },
             new Spy()
             {
                 CodeName = "Nissa Night",
-                faction = Faction.Blue,
+                Faction = Faction.Blue,
                 Id = 2,
-                skillType = SkillType.MartialArts,
-                service = Service.Bodyguard,
+                Skills = new List<SkillType>()
+                { 
+                    SkillType.MartialArts,
+                },
+                Services = new List<ServiceOffered>()
+                {
+                ServiceOffered.Bodyguard,
+                },
             },
             new Spy()
             {
                 CodeName = "Moonlight Baylor",
-                faction = Faction.Blue,
+                Faction = Faction.Blue,
                 Id = 3,
-                skillType = SkillType.Tracking,
-                service = Service.Weddings,
+                Skills = new List<SkillType>()
+                {
+                SkillType.Tracking,
+                },
+                Services = new List<ServiceOffered>()
+                {
+                ServiceOffered.Weddings,
+                },
             },
             new Spy()
             {
                 CodeName = "Jigsawret",
-                faction = Faction.Red,
+                Faction = Faction.Red,
                 Id = 4,
-                skillType = SkillType.Demolitions,
-                service = Service.Babysitting,
+                Skills = new List<SkillType>()
+                {
+                SkillType.Demolitions,
+                },
+                Services = new List<ServiceOffered>()
+                {
+                ServiceOffered.Babysitting,
+                },
             },
             new Spy()
             {
                 CodeName = "Bristopher",
-                faction = Faction.Red,
+                Faction = Faction.Red,
                 Id = 5,
-                skillType = SkillType.Hacking,
-                service = Service.ArtHeist,
+                Skills = new List<SkillType>()
+                {
+                SkillType.Hacking,
+                },
+                Services = new List<ServiceOffered>()
+                {
+                ServiceOffered.ArtHeist,
+                },
             }
         };
 
+        //internal List<Spy> GetAll()
+        //{
+        //    return _spy;
+        //}
     }
 }
 
