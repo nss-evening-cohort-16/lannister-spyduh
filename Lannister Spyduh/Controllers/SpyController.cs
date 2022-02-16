@@ -13,7 +13,8 @@ namespace Lannister_Spyduh.Controllers
          var mySpy = Spy
          mySpy.Skills
           mySpy.Services */
-
+       
+        // add
 
         /* [HttpGet("{spies/{friendlies}")]
          // Conditional for Friendly Spy Method.
