@@ -80,10 +80,12 @@ namespace Lannister_Spyduh.DataAccess
             }
         };
 
-        //internal List<Spy> GetAll()
-        //{
-        //    return _spy;
-        //}
+        internal void Post(Spy newSpy)
+        {
+            _spies.Add(newSpy);
+        }
+
+
     }
 }
 
