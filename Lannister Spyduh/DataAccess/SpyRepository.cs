@@ -1,5 +1,6 @@
 ﻿using Lannister_Spyduh.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lannister_Spyduh.DataAccess
 {
@@ -80,15 +81,19 @@ namespace Lannister_Spyduh.DataAccess
             }
         };
 
-        internal IEnumerable<Spy> GetSpysBySkills(Skills skills)
+        internal IEnumerable<Spy> GetTeamSpies(Faction spyFaction)
         {
+            var teamSpies = _spies.Where(spy => spy.Faction == spyFaction);
 
+            return teamSpies;
         }
 
-        //internal List<Spy> GetAll()
-        //{
-        //    return _spy;
-        //}
+        internal void Post(Spy newSpy)
+        {
+            _spies.Add(newSpy);
+        }
+
+
     }
 }
 
