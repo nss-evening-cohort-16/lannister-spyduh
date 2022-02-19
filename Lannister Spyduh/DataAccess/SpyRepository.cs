@@ -83,7 +83,7 @@ namespace Lannister_Spyduh.DataAccess
 
         internal IEnumerable<Spy> GetTeamSpies(Faction spyFaction)
         {
-            var teamSpies = _spies.Where(spy => spy.faction == spyFaction);
+            var teamSpies = _spies.Where(spy => spy.Faction == spyFaction);
 
             return teamSpies;
         }

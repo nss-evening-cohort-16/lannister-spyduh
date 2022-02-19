@@ -1,4 +1,5 @@
 ﻿using Lannister_Spyduh.DataAccess;
+﻿using Lannister_Spyduh.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Lannister_Spyduh.Controllers
     public class SpyController : ControllerBase
     {
 
-    SpyRepository _spyRepo = new SpyRepository();
+        SpyRepository _spyRepo = new SpyRepository();
 
         /* [HttpGet("skill/{skillType}")]
 
@@ -32,8 +33,20 @@ namespace Lannister_Spyduh.Controllers
 
 
         [HttpGet("spies/{teamSpy}")]
+        public IActionResult GetSpyByFaction(Faction teamSpy)
+        {
+            var matches = _spyRepo.GetTeamSpies(teamSpy);
 
-        
+            if (matches != null)
+            {
+                return Ok(matches);
+            } 
+            else
+            {
+                return NotFound();
+            }
+
+        }
 
 
         [HttpGet]
