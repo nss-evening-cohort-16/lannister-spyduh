@@ -32,12 +32,6 @@ namespace Lannister_Spyduh.Controllers
          // This spy is an enemy!
          };*/
 
-        [HttpGet]
-        public List<Spy> GetAllSpies()
-        {
-
-        }
-
         // [HttpPost]
 
     }

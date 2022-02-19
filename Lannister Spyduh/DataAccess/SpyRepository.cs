@@ -80,6 +80,11 @@ namespace Lannister_Spyduh.DataAccess
             }
         };
 
+        internal IEnumerable<Spy> GetSpysBySkills(Skills skills)
+        {
+
+        }
+
         //internal List<Spy> GetAll()
         //{
         //    return _spy;
