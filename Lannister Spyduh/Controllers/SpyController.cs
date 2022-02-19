@@ -1,6 +1,7 @@
 ﻿using Lannister_Spyduh.DataAccess;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace Lannister_Spyduh.Controllers
 {
@@ -35,6 +36,11 @@ namespace Lannister_Spyduh.Controllers
         
 
 
+        [HttpGet]
+        public List<Spy> GetAllSpies()
+        {
+
+        }
 
         // [HttpPost]
 
