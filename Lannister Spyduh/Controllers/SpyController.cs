@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+
+﻿using Lannister_Spyduh.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
 
 namespace Lannister_Spyduh.Controllers
 {
@@ -7,6 +11,9 @@ namespace Lannister_Spyduh.Controllers
     [ApiController]
     public class SpyController : ControllerBase
     {
+
+
+        SpyRepository _spyRepo = new SpyRepository();
         /* [HttpGet("skill/{skillType}")]
 
          [HttpGet("spies/{mySpy}/{skillType}")] ??????????????????????????????????????
@@ -38,7 +45,6 @@ namespace Lannister_Spyduh.Controllers
 
         // [HttpPost]
 
-        SpyRepository _spyRepo = new SpyRepository();
 
 
         [HttpPost]
