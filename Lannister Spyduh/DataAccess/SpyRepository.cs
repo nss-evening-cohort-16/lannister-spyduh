@@ -94,6 +94,13 @@ namespace Lannister_Spyduh.DataAccess
             _spies.Add(newSpy);
         }
 
+        internal object GetSkills(string skill)
+        {
+            //var matches = _spies.Where(s => SkillType.Includes(skill));
+            var matches = _spies.Where(s => s.Skills.Equals(skill));
+            return matches;
+        }
+
 
     }
 }

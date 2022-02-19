@@ -46,6 +46,18 @@ namespace Lannister_Spyduh.Controllers
             }
 
         }
+        [HttpGet("skill/{skill}")]
+        public IActionResult GetSkills(string Skill)
+        {
+            var match = _spyRepo.GetSkills(Skill);
+            if (match == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(match);
+        }
+
         [HttpPost]
         public IActionResult PostNewSpy(Spy newSpy)
         {
