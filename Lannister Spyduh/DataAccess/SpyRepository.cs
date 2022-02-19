@@ -1,4 +1,5 @@
-﻿using Lannister_Spyduh.Models;
+﻿
+using Lannister_Spyduh.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,7 +30,7 @@ namespace Lannister_Spyduh.DataAccess
                 Faction = Faction.Blue,
                 Id = 2,
                 Skills = new List<SkillType>()
-                { 
+                {
                     SkillType.MartialArts,
                 },
                 Services = new List<ServiceOffered>()
