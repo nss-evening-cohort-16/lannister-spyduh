@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Lannister_Spyduh.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace Lannister_Spyduh.Controllers
 {
@@ -30,6 +32,11 @@ namespace Lannister_Spyduh.Controllers
          // This spy is an enemy!
          };*/
 
+        [HttpGet]
+        public List<Spy> GetAllSpies()
+        {
+
+        }
 
         // [HttpPost]
 
