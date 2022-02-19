@@ -46,19 +46,6 @@ namespace Lannister_Spyduh.Controllers
             }
 
         }
-
-
-        [HttpGet]
-        public List<Spy> GetAllSpies()
-        {
-
-        }
-
-        // [HttpPost]
-
-        SpyRepository _spyRepo = new SpyRepository();
-
-
         [HttpPost]
         public IActionResult PostNewSpy(Spy newSpy)
         {
