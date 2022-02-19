@@ -50,32 +50,11 @@ namespace Lannister_Spyduh.DataAccess
             }
         };
 
-        internal IEnumerable<Spy> GetBlueSpies(Faction faction)
+        internal IEnumerable<Spy> GetTeamSpies(Faction spyFaction)
         {
-            var blueSpies = new List<Spy>();
-                
-                foreach (var spy in _spies)
-            {
-                if(spy.faction == Faction.Blue)
-                {
-                blueSpies.Add(spy);
-                }
-            }
-            return blueSpies;
-        }
+            var teamSpies = _spies.Where(spy => spy.faction == spyFaction);
 
-        internal IEnumerable<Spy> GetRedSpies(Faction faction)
-        {
-            var redSpies = new List<Spy>();
-
-            foreach (var spy in _spies)
-            {
-                if (spy.faction == Faction.Red)
-                {
-                    redSpies.Add(spy);
-                }
-            }
-            return redSpies;
+            return teamSpies;
         }
 
     }
