@@ -88,6 +88,12 @@ namespace Lannister_Spyduh.DataAccess
             return teamSpies;
         }
 
+        internal void Post(Spy newSpy)
+        {
+            _spies.Add(newSpy);
+        }
+
+
     }
 }
 

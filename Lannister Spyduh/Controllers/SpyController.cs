@@ -2,7 +2,6 @@
 ﻿using Lannister_Spyduh.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 namespace Lannister_Spyduh.Controllers
 {
@@ -57,5 +56,38 @@ namespace Lannister_Spyduh.Controllers
 
         // [HttpPost]
 
+        SpyRepository _spyRepo = new SpyRepository();
+
+
+        [HttpPost]
+        public IActionResult PostNewSpy(Spy newSpy)
+        {
+            if (!ValidNewSpy(newSpy))
+            {
+                return BadRequest(newSpy);
+            }
+            else
+            {
+                _spyRepo.Post(newSpy);
+                return Ok();
+            }
+        }
+
+        private bool ValidNewSpy(Spy newSpy)
+        {
+            if (newSpy == null)
+            {
+                return false;
+            }
+            if (newSpy.CodeName == null)
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(newSpy.CodeName))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
