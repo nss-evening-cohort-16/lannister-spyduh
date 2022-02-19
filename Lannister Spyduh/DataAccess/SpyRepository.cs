@@ -49,6 +49,12 @@ namespace Lannister_Spyduh.DataAccess
             }
         };
 
+        internal void Post(Spy newSpy)
+        {
+            _spies.Add(newSpy);
+        }
+
+
     }
 }
 
