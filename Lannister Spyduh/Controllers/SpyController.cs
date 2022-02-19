@@ -46,8 +46,6 @@ namespace Lannister_Spyduh.Controllers
             }
 
         }
-
-
         [HttpPost]
         public IActionResult PostNewSpy(Spy newSpy)
         {
