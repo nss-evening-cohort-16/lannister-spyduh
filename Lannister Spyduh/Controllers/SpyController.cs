@@ -1,5 +1,6 @@
-﻿using Lannister_Spyduh.DataAccess;
-﻿using Lannister_Spyduh.Models;
+﻿
+using Lannister_Spyduh.DataAccess;
+using Lannister_Spyduh.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +16,6 @@ namespace Lannister_Spyduh.Controllers
         SpyRepository _spyRepo = new SpyRepository();
 
         /* [HttpGet("skill/{skillType}")]
-
          [HttpGet("spies/{mySpy}/{skillType}")] ??????????????????????????????????????
          var mySpy = Spy
          mySpy.Skills
@@ -39,13 +39,25 @@ namespace Lannister_Spyduh.Controllers
             if (matches != null)
             {
                 return Ok(matches);
-            } 
+            }
             else
             {
                 return NotFound();
             }
 
         }
+        [HttpGet("skill/{skill}")]
+        public IActionResult GetSkills(string Skill)
+        {
+            var match = _spyRepo.GetSkills(Skill);
+            if (match == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(match);
+        }
+
         [HttpPost]
         public IActionResult PostNewSpy(Spy newSpy)
         {
