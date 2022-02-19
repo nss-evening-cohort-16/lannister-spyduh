@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Lannister_Spyduh.DataAccess;
+﻿using Lannister_Spyduh.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lannister_Spyduh.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
+
     public class SpyController : ControllerBase
     {
+
+        SpyRepository _spyRepo = new SpyRepository();
+
         /* [HttpGet("skill/{skillType}")]
 
          [HttpGet("spies/{mySpy}/{skillType}")] ??????????????????????????????????????
@@ -24,11 +31,22 @@ namespace Lannister_Spyduh.Controllers
          }; */
 
 
-        /* [HttpGet("{spies/{enemies}")]
-         // Conditional for Enemy Spy Method.
-         if (spy.Faction != user.Faction && spy.Faction != 0){
-         // This spy is an enemy!
-         };*/
+        [HttpGet("spies/{teamSpy}")]
+        public IActionResult GetSpyByFaction(Faction teamSpy)
+        {
+            var matches = _spyRepo.GetTeamSpies(teamSpy);
+
+            if (matches != null)
+            {
+                return Ok(matches);
+            } 
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
 
         [HttpGet]
         public List<Spy> GetAllSpies()
