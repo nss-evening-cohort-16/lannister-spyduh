@@ -1,5 +1,6 @@
 ﻿using Lannister_Spyduh.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lannister_Spyduh.DataAccess
 {
@@ -48,6 +49,34 @@ namespace Lannister_Spyduh.DataAccess
                 service = Service.ArtHeist,
             }
         };
+
+        internal IEnumerable<Spy> GetBlueSpies(Faction faction)
+        {
+            var blueSpies = new List<Spy>();
+                
+                foreach (var spy in _spies)
+            {
+                if(spy.faction == Faction.Blue)
+                {
+                blueSpies.Add(spy);
+                }
+            }
+            return blueSpies;
+        }
+
+        internal IEnumerable<Spy> GetRedSpies(Faction faction)
+        {
+            var redSpies = new List<Spy>();
+
+            foreach (var spy in _spies)
+            {
+                if (spy.faction == Faction.Red)
+                {
+                    redSpies.Add(spy);
+                }
+            }
+            return redSpies;
+        }
 
     }
 }

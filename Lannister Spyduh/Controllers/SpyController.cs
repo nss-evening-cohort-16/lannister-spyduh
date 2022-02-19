@@ -24,7 +24,7 @@ namespace Lannister_Spyduh.Controllers
          }; */
 
 
-        /* [HttpGet("{spies/{enemies}")]
+        /* [HttpGet("{spies/{blueSpies}")]
          // Conditional for Enemy Spy Method.
          if (spy.Faction != user.Faction && spy.Faction != 0){
          // This spy is an enemy!
